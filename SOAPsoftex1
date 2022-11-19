@@ -1,0 +1,33 @@
+
+POST /InStock HTTP/1.1
+Host: www.empresaBrasil.com
+Content-Type: application/soap+xml; charset=utf-8
+Content-Length: nnn
+<?xml version="1.0"?>
+
+<SOAP-ENV:Envelope 
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+SOAP:encodingStyle=”http://schemas.xmlsoap.org/soap/encoding/”>
+<!-- Aqui estão os 2 sites que eu usei de referencia, para  fazer esse codigo. Envelope do codigo SOAP, que é obrigatório para comunicar o conteúdo da mensagem que será enviada para a empresa-->
+<soap: Body xmlns:m="http://www.empresabrasil.com/informaçõesCliente">
+    <m:informacoesClienteRequest>
+        <m:cpf>12341344313231</m:cpf>
+    <m:informacoesClenteRequest>
+</soap:Body>
+</soap:Envelope>
+<!--Aqui eu faço o requerimento das informações do cliente da empresa, informando o cpf do cliente-->
+<?xml version="1.0"?>
+
+<soap:Envelope
+xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"
+SOAP:encodingStyle=”http://schemas.xmlsoap.org/soap/encoding/”>
+<soap:Body xmlns:m="http://www.empresabrasil.com/informaçõesCliente">
+  <m:informacoesClienteReponse>
+    <m:nome>Matheus Lineke</m:nome>
+    <m:endereco>Caruaru-Pe Rua Oliveira Lima</m:endereco>
+    <m:telefone>98999777436</m:telefone>
+  </m:informacoesclienteResponse>
+</soap:Body>
+
+</soap:Envelope>
+<!--Aqui a resposta ao meu requerimento-->
